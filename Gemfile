@@ -29,3 +29,5 @@ group :development do
   # gem "rack-mini-profiler"
   # gem "spring"
 end
+
+gem 'foreman', github: 'ddollar/foreman'
