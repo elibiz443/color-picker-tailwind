@@ -26,8 +26,6 @@ export default class extends Controller {
       ],
       theme: "pill",
       themeMode: "dark",
-      inline: false,
-      defaultColor: '#000000',
     });
 
     Coloris.setInstance(".background_color", {
@@ -45,8 +43,6 @@ export default class extends Controller {
         '#00b4d880',
         'rgba(0,119,182,0.8)'
       ],
-      inline: false,
-      defaultColor: '#ffffff',
     });
   }
 }

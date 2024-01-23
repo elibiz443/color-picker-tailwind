@@ -1,6 +1,4 @@
-<%= form_with(model: post, data: { 
-      controller: "colors"
-      }) do |form| %>
+<%= form_with(model: post, data: { controller: "colors" }, class: "bg-blue-200 w-3/4 mx-auto rounded-lg p-12 mt-12") do |form| %>
   <% if post.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -11,23 +9,11 @@
       </ul>
     </div>
   <% end %>
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-  <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.text_area :body %>
-  </div>
-  <div>
-    <%= form.label :font_color, style: "display: block" %>
-    <%= form.text_field :font_color, class: "font_color" %>
-  </div>
-  <div>
-    <%= form.label :background_color, style: "display: block" %>
-    <%= form.text_field :background_color, class: "background_color" %>
-  </div>
-  <div>
-    <%= form.submit %>
+  <div class="grid gap-4 w-1/2 mx-auto">
+    <%= form.text_field :title, placeholder: "Title", class: "rounded-md px-5 py-2 focus:outline-none focus:ring-none focus:border-transparent focus:shadow-ld focus:shadow-slate-700 border-2 border-gray-500 w-full" %>
+    <%= form.text_area :body, placeholder: "Description", class: "h-24 px-5 focus:outline-none focus:ring-none focus:border-transparent focus:shadow-ld focus:shadow-slate-700 border-2 border-gray-500 rounded-md w-full" %>
+    <%= form.text_field :font_color, class: "rounded-md px-5 py-2 focus:outline-none focus:ring-none focus:border-transparent focus:shadow-ld focus:shadow-slate-700 border-2 border-gray-500 font_color w-1/2" %>
+    <%= form.text_field :background_color, class: "rounded-md px-5 py-2 focus:outline-none focus:ring-none focus:border-transparent focus:shadow-ld focus:shadow-slate-700 border-2 border-gray-500 background_color w-1/2" %>
+    <button class="w-2/3 py-2 rounded-md bg-blue-500 hover:bg-blue-700 text-gray-100">Create Post</button>
   </div>
 <% end %>
