@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # username: etg
+  # password: immortal
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: color_picker_tailwind_development
+
+test:
+  <<: *default
+  database: color_picker_tailwind_test
+
+production:
+  <<: *default
+  database: color_picker_tailwind_production
+  username: color_picker_tailwind
+  password: <%= ENV["COLOR_PICKER_TAILWIND_DATABASE_PASSWORD"] %>
